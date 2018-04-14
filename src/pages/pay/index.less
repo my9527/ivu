@@ -1,0 +1,170 @@
+
+
+@import "../../res/vars.less";
+
+.page-pay-pay{
+
+  background-color: @theme-bg;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  .row{
+    width: 100%;
+  }
+  .card{
+    padding: 32*@ratio 30*@ratio;
+    background-color: #FFF6F6;
+    color: #333333;
+    display: flex;
+    align-items: center;
+    margin-bottom: 18*@ratio;
+
+    .thumbnail{
+      width: 132*@ratio;
+      height: 132*@ratio;
+      border-radius: 50%;
+    }
+
+    .info{
+      flex: 1;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .top{
+        display: flex;
+        justify-content: space-between;
+        .name{
+          font-size: 24*@ratio;
+        }
+        .fee{
+          font-size: 40*@ratio;
+        }
+      }
+      .bot{
+        font-size: 24*@ratio;
+        text-align: left;
+        padding-left: .5em;
+      }
+
+    }
+  }
+
+  .pay-icon{
+    width: 44*@ratio;
+    height: 44*@ratio;
+  }
+
+
+
+  .pay-icon{
+    margin-right: .5em;
+  }
+
+  .pay-row,.type{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .pay-row{
+    padding: 44*@ratio 30*@ratio;
+    box-sizing: border-box;
+    background-color: white;
+    &:last-of-type{
+      margin-top: 18*@ratio;
+    }
+
+  }
+
+  .opt-btn-cnt{
+
+    margin-top: 70*@ratio;
+  }
+
+
+}
+
+.page-pay-result{
+  min-height: 100vh;
+  .content{
+    padding-top: 246*@ratio;
+    .pay-rslt{
+      width: 242*@ratio;
+      height: 242*@ratio;
+    }
+  }
+
+  .img-icon-pay-success{
+    background-image: url("../../res/imgs/success.png");
+  }
+
+  .btns{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 115*@ratio;
+    left: 0;
+    width: 100%;
+    padding: 0 30*@ratio;
+    box-sizing: border-box;
+  }
+  .btn{
+    width: 328*@ratio;
+  }
+
+  .check-btn{
+    .opt-btn-cnt{
+      color: @theme-color;
+    }
+    .opt-btn{
+      background-color: white!important;
+      border: 1px solid @theme-color;
+
+
+    }
+
+  }
+}
+
+.page-pay-detail{
+  .list{
+    padding: 29*@ratio 30*@ratio;
+    font-size: 24*@ratio;
+    color: #666666;
+    border-top: @gray-border;
+  }
+  .it-row{
+    display: flex;
+    justify-content: space-between;
+
+    &:not(:first-of-type){
+      margin-top: 34*@ratio;
+    }
+  }
+
+  .card{
+    padding: 54*@ratio 30*@ratio;
+    font-size: 24*@ratio;
+    color:#4D4D4D;
+
+    .row{
+      display: flex;
+      justify-content: space-between;
+    }
+    .fee-name{
+
+    }
+    .fee{
+      font-size: 40*@ratio;
+      color: @theme-color;
+    }
+    .info{
+      text-align: right;
+    }
+  }
+}

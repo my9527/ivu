@@ -1,0 +1,70 @@
+
+
+@import "../../res/vars.less";
+
+.page-list{
+
+  background-color: @theme-bg;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
+  .list{
+    padding: 0 30*@ratio;
+    background-color: white;
+
+  }
+
+  .card{
+    display: flex;
+    align-items: center;
+    padding: 16*@ratio 0;
+    &:not(:last-of-type){
+      border-bottom: @gray-border;
+    }
+    .date-cnt{
+      width:114*@ratio;
+      height: 114*@ratio;
+      border-radius: 50%;
+      color: white;
+      background-color: #FF8585;
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      box-sizing: border-box;
+      .date-str{
+        //margin: 29*@ratio;
+        box-sizing: border-box;
+        display: inline-flex;
+        flex-wrap: wrap;
+        word-break: break-all;
+        width: 2.5em;
+
+      }
+    }
+    .info{
+      flex: 1;
+      padding: 0 24*@ratio;
+      .row{
+        display: flex;
+        justify-content: space-between;
+      }
+      .fee-row{
+        color: #333333;
+      }
+      .num-row{
+        color: #000;
+      }
+      .f24{
+        font-size: 24*@ratio;
+      }
+      .f28{
+        font-size: 28*@ratio;
+      }
+      .date{
+        color:#999999;
+      }
+    }
+
+  }
+}

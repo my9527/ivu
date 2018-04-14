@@ -1,0 +1,80 @@
+
+@import "../../res/vars.less";
+.page-home{
+  .right-small{
+    transform: rotate(180deg);
+    width: 0.3rem;
+    height: 0.3rem;
+  }
+  .header-r{
+    font-size: 28*@ratio;
+  }
+
+  .cate-name{
+    padding: 23*@ratio 30*@ratio 17*@ratio;
+    background-color: #F7F7F7;
+    font-size: 28*@ratio;
+    color: #999999;
+    text-align: left;
+  }
+
+  .fee-base-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32*@ratio 31*@ratio 35*@ratio;
+    background-color: white;
+    color: #666666;
+
+    &:last-of-type{
+      border-top: 1px solid #E6E6E6;
+    }
+  }
+
+  .month-fee-row{
+    padding: 41*@ratio 71*@ratio 35*@ratio;
+
+  }
+  .fee-red{
+    color: @theme-color!important;
+  }
+  .month-fee-row:last-of-type{
+    padding-top: 0;
+    .fee-row-cnt{
+      border-top: 1px solid #E6E6E6;
+      padding-top: 41*@ratio;
+
+    }
+  }
+  .fee-row-cnt{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 28*@ratio;
+  }
+  .month-fee-item{
+    .mon{
+      color: #666666;
+    }
+    .fee{
+      color: #333333;
+    }
+  }
+
+  .opt-btn-cnt{
+    padding: 0 30*@ratio ;
+    color: white;
+  }
+  .opt-btn{
+    background-color: @theme-color;
+    text-align: center;
+    padding: 25*@ratio 0;
+    border-radius: 4px;
+  }
+  .tips{
+    font-size: 28*@ratio;
+    color: #999999;
+    padding: 10*@ratio 30*@ratio;
+    text-align: left;
+  }
+}
