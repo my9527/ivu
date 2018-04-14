@@ -1,33 +1,34 @@
-
 @import "../res/vars.less";
 
-.cmpt-header{
-  padding: 26*@ratio 27*@ratio;
-  background-color: #DE3031;
-  color: white;
-  font-size: 36*@ratio;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  align-items: center;
-
-  .img-icon-nav-back{
-    background-image: url("../res/imgs/navBack.png");
-  }
-
-  .h-cnt{
+.cmpt-header {
+    padding: 26*@ratio 27*@ratio;
+    background-color: #DE3031;
+    color: white;
+    font-size: 36*@ratio;
     display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
     align-items: center;
-  }
 
-  .h-l{
-    justify-content: flex-start;
-  }
-  .h-r{
-    justify-content: flex-end;
-  }
-  .h-title{
-    width: 50%;
-  }
+    .img-icon-nav-back {
+        background-image: url("../res/imgs/navBack.png");
+    }
+
+    .h-cnt {
+        display: flex;
+        align-items: center;
+        min-width: 25%;
+        white-space: nowrap;
+    }
+
+    .h-l {
+        justify-content: flex-start;
+    }
+    .h-r {
+        justify-content: flex-end;
+    }
+    .h-title {
+        width: 50%;
+    }
 
 }
