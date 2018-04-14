@@ -13,9 +13,11 @@ import "./index.less";
 
 const payResult = (props) => {
 
+    // 回退
     const back = () => {
         props.history.go(-1)
     };
+    // 前往列表
     const goList = () => {
         props.history.push('/list');
     }

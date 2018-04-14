@@ -29,6 +29,10 @@ export default class PageFee extends Component {
         isOpen: false
     }
 
+    /**
+     * 设置当前的支付方式
+     * @param payment
+     */
     changePayMent(payment) {
         this.setState({
             payment

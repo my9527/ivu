@@ -10,14 +10,21 @@ import "./header.less"
 
 
 export default class CmptHeader extends Component {
+
+    // 默认左侧为回退按钮，
     leftClick() {
         if (this.props.leftClick) {
             this.props.leftClick()
         } else if (this.props.preventDefault) {
             return
         }
+        if (this.props.history) {
+            this.props.history.go(-1);
 
-        this.props.history.go(-1);
+        } else {
+            window.history.go(-1);
+        }
+
     }
 
     render() {

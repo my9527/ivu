@@ -60,15 +60,23 @@ export default class PageHome extends Component {
     state = {
         time: new Date(),
         isOpen: false,
-        monData: tempData
+        // monData: tempData,
+        fetchYear: new Date().getFullYear(),
+        data: {mons: tempData}
+    }
+
+    componentWillMount() {
+        false && this.getData();
     }
 
     handleSelect(date) {
         console.log(date);
         this.setState({
             time: date,
-            isOpen: false
-        })
+            isOpen: false,
+            fetchYear: date.getFullYear()
+        });
+        this.getData(date.getFullYear());
     }
 
     handleCancel() {
@@ -77,12 +85,16 @@ export default class PageHome extends Component {
         })
     }
 
-    getData(month) {
+    /**
+     * 根据年份获取数据
+     * @param year
+     */
+    getData(year = 2018) {
         axios.post('http://182.139.182.231:8082/WisdomPartyBuildingServices/api/PartyMembershipDues/GetPaymentData', {
             Params: {
                 UnitPath: "3C65CD8B-5809-438C-8EB8-793EBAF4E5E1,9590ce74-d062-4696-a9b1-d16368f7c585,5d557ee7-5352-4bfb-a867-3ea271022d86,3db24930-5cdc-4c05-b0d5-4cce63c36deb",
                 UserGuid: "0adfea55-4a07-496c-b6fb-ffff3c7f2d50",
-                Year: 2018
+                Year: year
             }
         })
             .then(res => {
@@ -95,10 +107,15 @@ export default class PageHome extends Component {
                         month: `${monMap[mon]}月`,
                         fee: data[mon]
                     })
-                })
+                });
 
                 this.setState({
-                    data: monData
+                    data: {
+                        mons: monData,
+                        type: data.DuesType,
+                        perMon: data.PmbId * data.payablePartMoney
+                    },
+
                 })
 
 
@@ -113,13 +130,16 @@ export default class PageHome extends Component {
 
     render() {
 
-        const goTest = () => {
+        const {data} = this.state;
+
+        // 打开时间选择
+        const openDate = () => {
             this.setState({
                 isOpen: true
             })
             // this.props.history.push('/test')
         }
-        const headerRight = <div onClick={e => goTest()} className="header-r h-r h-cnt"><span>2018</span><span
+        const headerRight = <div onClick={e => openDate()} className="header-r h-r h-cnt"><span>2018</span><span
             className="img-icon-nav-back right-small "></span></div>
 
 
@@ -132,11 +152,11 @@ export default class PageHome extends Component {
 
                     <div className="fee-base-row">
                         <span>缴费类型</span>
-                        <span>普通在职党员</span>
+                        <span>{data.type || '普通在职党员'}</span>
                     </div>
                     <div className="fee-base-row">
                         <span>缴费金额</span>
-                        <span className='fee-red'>¥60</span>
+                        <span className='fee-red'>¥{data.perMon || 0}</span>
                     </div>
                 </div>
 
@@ -145,14 +165,14 @@ export default class PageHome extends Component {
 
                     <div className="month-fee-row">
                         <div className="fee-row-cnt">
-                            {tempData.slice(0, 6).map((it, idx) => {
+                            {data.mons.slice(0, 6).map((it, idx) => {
                                 return genMonIt(it, idx)
                             })}
                         </div>
                     </div>
                     <div className="month-fee-row">
                         <div className="fee-row-cnt">
-                            {tempData.slice(6).map((it, idx) => {
+                            {data.mons.slice(6).map((it, idx) => {
                                 return genMonIt(it, idx)
                             })}
                         </div>

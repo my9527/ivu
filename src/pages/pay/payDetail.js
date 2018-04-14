@@ -25,25 +25,8 @@ import './index.less';
 export default class PageFee extends Component {
 
 
-    state = {
-        payment: 'wxpay'
-    }
-
-    changePayMent(payment) {
-        this.setState({
-            payment
-        })
-    }
-
     render() {
-
-        const goTest = () => {
-            this.props.history.push('/test')
-        }
-        const headerRight = <div onClick={e => goTest()} className="header-r h-r h-cnt"><span
-            className="img-icon-calendar right-small "></span></div>
-
-
+        
         return (
             <div className="page-pay-detail">
                 <Header {...this.props} title="党费订单详情"/>
