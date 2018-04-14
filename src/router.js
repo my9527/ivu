@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom
 import Bundle from './components/Bundle';
 import ErrorPage from './pages/404';
 
-import HomePage from './pages/Home';
+import HomePage from './pages/home';
 import FeePage from './pages/fee';
 import PayPage from './pages/pay/pay';
 import PayResultPage from './pages/pay/payResult';

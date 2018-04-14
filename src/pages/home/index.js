@@ -76,7 +76,9 @@ export default class PageHome extends Component {
             isOpen: false,
             fetchYear: date.getFullYear()
         });
-        this.getData(date.getFullYear());
+
+        // 接口调通之后开启
+        false && this.getData(date.getFullYear());
     }
 
     handleCancel() {
